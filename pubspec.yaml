@@ -1,0 +1,217 @@
+name: ipsewallet
+description: IPSE 2.0 wallet
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 0.0.76+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.3
+  dio: ^4.0.0
+  connectivity: ^3.0.3
+  shared_preferences: ^0.5.7+3
+  get_storage: ^2.0.2
+  package_info: ^0.4.1
+  fluttertoast: ^8.0.8
+
+  mobx: ^1.2.1+1
+  flutter_mobx: ^1.1.0+1
+  mobx_codegen: ^1.1.0+1
+  
+  json_serializable: ^3.3.0
+  flutter_aes_ecb_pkcs5: ^0.1.1
+  rxdart: ^0.23.1
+  flutter_svg: ^0.22.0
+  flutter_local_notifications: ^5.0.0+4
+  convert: ^2.1.1
+  flutter_webview_plugin: ^0.4.0
+  decimal: ^1.0.0+1
+  
+  flutter_localizations:
+    sdk: flutter
+
+  # QR code generator & reader
+  qr_flutter: ^3.2.0
+  device_info: ^0.4.2+1
+  images_picker: ^1.0.0
+  scan: ^1.0.0
+  charts_flutter: ^0.9.0
+  ota_update: ^3.1.0
+
+  local_auth: ^1.1.5
+  refresh_loadmore: ^1.1.1
+  # open link in browser
+  url_launcher: ^6.0.3
+  webview_flutter: ^1.0.3
+  flutter_ijkplayer: ^0.3.5+1
+  file_picker: ^3.0.1
+  sentry_flutter: ^5.1.0
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.9.0
+  build_runner: ^1.10.1
+
+  flutter_test:
+    sdk: flutter
+
+dependency_overrides:
+  intl: '>=0.16.0'
+
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/images/app.png"
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    # js service
+    - lib/polkadot_js_service/dist/main.js
+    # images
+    - assets/images/app.png
+    - assets/images/app-logo.png
+    - assets/images/logo-full-color.png
+    - assets/images/no_data.png
+    - assets/images/ipse/
+    - assets/images/coins/
+    - assets/images/assets/
+    - assets/images/gov/
+    - assets/images/app.png
+    - assets/images/a/assets-nav.png
+    - assets/images/a/invite-poster-bg.png
+    - assets/images/a/back-fff.png
+    - assets/images/a/back.png
+    - assets/images/a/choose.png
+    - assets/images/a/confirming.png
+    - assets/images/a/copy.png
+    - assets/images/a/copy999.png
+    - assets/images/a/delete.png
+    - assets/images/a/dropdownlist-voter.png
+    - assets/images/a/dropdownlist.png
+    - assets/images/a/empty.png
+    - assets/images/a/no-network.png
+    - assets/images/a/lefttime-circle.png
+    - assets/images/a/more.png
+    - assets/images/a/bg-gerenzhongxin.png
+    - assets/images/a/no-register.png
+    - assets/images/a/web-register.png
+    - assets/images/a/my-active-hover.png
+    - assets/images/a/my-active.png
+    - assets/images/a/my-contact.png
+    - assets/images/a/my-accountmanage.png
+    - assets/images/a/my-council.png
+    - assets/images/a/my-democracy.png
+    - assets/images/a/my-receive-addr.png
+    - assets/images/a/my-rommendcode.png
+    - assets/images/a/my-setting.png
+    - assets/images/a/my-shadow.png
+    - assets/images/a/my-staking.png
+    - assets/images/a/my-treasury.png
+    - assets/images/a/assets-receive-qr.png
+    - assets/images/a/assets-send.png
+    - assets/images/a/assets-tips-hover.png
+    - assets/images/a/assets-tips.png
+    - assets/images/a/assets-in.png
+    - assets/images/a/assets-out.png
+    - assets/images/a/not-choose.png
+    - assets/images/a/not-find-addr.png
+    - assets/images/a/not-find-bill.png
+    - assets/images/a/success.png
+    - assets/images/a/qrcode.png
+    - assets/images/a/receive-success.png
+    - assets/images/a/saletax-schedule.png
+    - assets/images/a/scan.png
+    - assets/images/a/staking-.png
+    - assets/images/a/staking-gou.png
+    - assets/images/a/staking-operate-bg.png
+    - assets/images/a/statistics-date-dropdown.png
+    - assets/images/a/submit.png
+    - assets/images/a/tips-grey.png
+    - assets/images/a/tips.png
+    - assets/images/a/tip.png
+    - assets/images/a/treasury-blue.png
+    - assets/images/a/treasury-closewindow.png
+    - assets/images/a/treasury-red.png
+    - assets/images/a/upload.png
+    - assets/images/a/vote.png
+    - assets/images/a/x.png
+    - assets/images/a/qr-border.png
+  
+   
+    - assets/images/a/staking-bond.png
+    - assets/images/a/staking-reward.png
+    - assets/images/a/staking-control.png
+
+    - assets/images/staking/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    # - family: OPPOSans
+    #   fonts:
+    #     - asset: assets/fonts/OPPOSans/OPPOSans-R.ttf
+    #     - asset: assets/fonts/OPPOSans/OPPOSans-M.ttf
+    #       weight: 500
+    #     - asset: assets/fonts/OPPOSans/OPPOSans-B.ttf
+    #       weight: 900
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+          weight: 900
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

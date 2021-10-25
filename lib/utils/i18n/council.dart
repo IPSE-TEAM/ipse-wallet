@@ -1,0 +1,41 @@
+const Map<String, String> enCouncil = {
+  'council': 'Council',
+  'termProgress': 'term progress',
+  'seats': 'seats',
+  'runnersUp': 'runners up',
+  'candidates': 'candidates',
+  'backing': 'backing',
+  'submitCandidacy': 'Submit candidacy',
+  'vote': 'vote',
+  'submit': 'Submit',
+  'submitAccount': 'Submit Account',
+  'submit.voted': 'Amount voted',
+  'submit.voting': 'Voting balance',
+  'submit.selected': 'Selected Candidate',
+  'submit.clear': 'Clear list',
+  'submit.err.voteAmount': 'Please enter the vote amount',
+  'submit.err.voteNumber': 'Please enter a number greater than 0 ',
+  'submit.err.availableBalance': 'Insufficient balance! Available balance',
+  'voters': 'Voters'
+};
+
+const Map<String, String> zhCouncil = {
+  'council': '议会',
+  'termProgress': '学期进度',
+  'seats': '席位',
+  'runnersUp': 'runners up',
+  'candidates': '候选人',
+  'backing': '支持',
+  'submitCandidacy': '提交候选人',
+  'vote': '投票',
+  'submit': '提交',
+  'submitAccount': '提交账户',
+  'submit.voted': '投票金额',
+  'submit.voting': '投票余额',
+  'submit.selected': '已选候选人',
+  'submit.clear': '清空列表',
+  'submit.err.voteAmount': '请输入投票金额',
+  'submit.err.voteNumber': '请输入大于0的数字',
+  'submit.err.availableBalance': '余额不足！可用余额',
+  'voters': '支持者'
+};

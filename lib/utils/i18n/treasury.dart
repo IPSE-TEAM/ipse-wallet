@@ -1,0 +1,86 @@
+const Map<String, String> enTreasury = {
+  'treasury': 'Treasury',
+  'proposals': 'Proposals',
+  'total': 'Total',
+  'approved': 'Approved',
+  'available': 'Available',
+  'spendPeriod': 'Spend period',
+  'days': 'days',
+  'noPendingProposals': 'No pending proposals',
+  'noApprovedProposals': 'No approved proposals',
+  'noPendingTips': 'No pending tips',
+  'beneficiary': 'Beneficiary',
+  'payment': 'Payment',
+  'bond': 'Bond',
+  'tips': 'Tips',
+  'finder': 'Finder',
+  'fee': 'Fee',
+  'reason': 'Reason',
+  'endorsements': 'Endorsements',
+  'endorse': 'Endorse',
+  'submitProposal': 'Submit proposal',
+  'tip': 'Tip',
+  'value': 'Value',
+  'submitWithAccount': 'submit with account',
+  'submitWithAccountTip': 'This account will make the proposal'
+    +' and be responsible for the bond.',
+  'beneficiaryTip': 'The beneficiary will receive '
+   + 'the full amount if the proposal passes.',
+  'valueTip': 'The value is the amount that is being asked for'
+   + ' and that will be allocated to the '
+    + 'beneficiary if the proposal is approved.',
+  'proposalBond': 'proposal bond',
+  'minimumBond': 'minimum bond',
+  'bondTip': 'Of the beneficiary amount, at least 5.00% would '
+   + 'need to be put up as collateral. The maximum of this and '
+    + 'the minimum bond will be used to secure the proposal, '
+     + 'refundable if it passes.',
+   'reasonTip': 'A reason (to be stored-on-chain) as to '
+    + 'why the recipient deserves a tip payout.',
+  'submit.err.amount': 'Please enter a value',
+  'submit.err.number': 'Please enter a number greater than 0 ',
+  'submit.err.availableBalance': 'Insufficient balance! Available balance',
+  'submit.err.input': 'Please enter ',
+  'submit.err.charLength': 'characters in length',
+  'submit.err.inputGreaterThanMinBond': 'Please enter a number not less than the minimum bound value'
+};
+
+const Map<String, String> zhTreasury = {
+  'treasury': '国库',
+  'proposals': '提案',
+  'total': '总共',
+  'approved': '赞成',
+  'available': '可用',
+  'spendPeriod': 'Spend period',
+  'days': '天',
+  'noPendingProposals': '没有进行中的提案',
+  'noApprovedProposals': '没有赞成的提案',
+  'noPendingTips': '没有进行中的Tips',
+  'beneficiary': '受益者',
+  'payment': 'Payment',
+  'bond': '抵押',
+  'tips': 'Tips',
+  'finder': 'Finder',
+  'fee': 'Fee',
+  'reason': '理由',
+  'endorsements': 'Endorsements',
+  'endorse': 'Endorse',
+  'submitProposal': '提交提案',
+  'tip': 'Tip',
+  'value': '值',
+  'submitWithAccount': '提交账户',
+  'submitWithAccountTip': '该帐户将提出建议并负责保证金。',
+  'beneficiaryTip': '如果提案通过，受益人将收到全额款项。',
+  'valueTip': '该值是请求的金额，如果提案被批准，将分配给受益人。',
+  'proposalBond': '提案绑定',
+  'minimumBond': '最小绑定额',
+  'bondTip': '在受益金额中，至少需要存入5.00％作为抵押。'
+   + '最高和最低保证金将用于保护提案，如果通过则可退还。',
+   'reasonTip': '受益人值得支付小费的原因。(链上储存)',
+  'submit.err.amount': '请输入值',
+  'submit.err.number': '请输入大于0的数字',
+  'submit.err.availableBalance': '余额不足！可用余额',
+  'submit.err.input': '请输入',
+  'submit.err.charLength': '长度的字符',
+  'submit.err.inputGreaterThanMinBond': '请输入不小于最小绑定值的数字'
+};
