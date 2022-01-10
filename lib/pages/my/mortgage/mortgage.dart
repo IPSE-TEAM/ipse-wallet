@@ -36,14 +36,15 @@ class _MortgageState extends State<Mortgage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _fetchData();
+      webApi.ipse.fetchPocIsChillTime();
+      webApi.ipse.fetchPocChillTime();
     });
   }
 
   Future<void> _fetchData() async {
     await Future.wait([
       webApi.ipse.fetchPocRegisterStatus(),
-      webApi.ipse.fetchPocIsChillTime(),
-      webApi.ipse.fetchPocChillTime(),
+     
       webApi.ipse.fetchPocMinersOf(),
       webApi.ipse.fetchPoclockList(),
     ]);
@@ -101,7 +102,17 @@ class _MortgageState extends State<Mortgage> {
       if (store.ipse.pocMinersOf != null && store.ipse.pocMinersOf.isNotEmpty) {
         listWidget = _getListWidget();
       }
+     bool isChillTime =
+          store.ipse.pocIsChillTime == null ? false : store.ipse.pocIsChillTime;
      
+      if (store.ipse.pocChillTime != null &&store.ipse.newHeads?.number!=null&&
+          (store.ipse.pocChillTime[isChillTime ? 1 : 0] -
+                  (store.ipse.newHeads.number ) <
+              0)) {
+      
+        webApi.ipse.fetchPocIsChillTime();
+        webApi.ipse.fetchPocChillTime();
+      }
 
       return Scaffold(
         appBar: myAppBar(
