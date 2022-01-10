@@ -117,8 +117,16 @@ class _AddLabelState extends State<AddLabel> {
                                       .pushNamed(IpseMinerRegister.route),
                                   child: Row(
                                     children: [
-                                      Image.asset(
-                                          'assets/images/ipse/miner-register.png'),
+                                       Container(
+                                        width: Adapt.px(80),
+                                        height: Adapt.px(80),
+                                         decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(100),
+                                        ),
+                                        child: Image.asset(
+                                            'assets/images/ipse/miner-register.png'),
+                                      ),
                                       SizedBox(width: 3),
                                       Text(
                                         dic['miner_register'],
@@ -134,8 +142,16 @@ class _AddLabelState extends State<AddLabel> {
                                       .pushNamed(IpseMinerManage.route),
                                   child: Row(
                                     children: [
-                                      Image.asset(
-                                          'assets/images/ipse/miner-manage.png'),
+                                      Container(
+                                        width: Adapt.px(80),
+                                        height: Adapt.px(80),
+                                         decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(100),
+                                        ),
+                                        child: Image.asset(
+                                            'assets/images/ipse/miner-manage.png'),
+                                      ),
                                       SizedBox(width: 3),
                                       Text(
                                         dic['miner_manage'],
@@ -151,8 +167,15 @@ class _AddLabelState extends State<AddLabel> {
                                 .pushNamed(IpseMinerSelect.route),
                             child: Row(
                               children: [
-                                Image.asset(
-                                    'assets/images/ipse/go-mortgage.png'),
+                                Container(
+                                  width: Adapt.px(80),
+                                  height: Adapt.px(80),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  child: Center(child: Icon(Icons.new_label_outlined,size: Adapt.px(60),)),
+                                ),
                                 SizedBox(width: 3),
                                 Text(
                                   dic['add_label'],

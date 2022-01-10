@@ -331,8 +331,8 @@ class _MinerManageState extends State<MinerManage> {
                                 ),
                                 SizedBox(width: 16),
                                 Text(
-                                  store.ipse.pocChillTime != null
-                                      ? '${I18n.of(context).gov['remain']}:  ${Fmt.blockToTime(store.ipse.pocChillTime[isChillTime ? 1 : 0] - store.ipse.newHeads?.number, blockDuration)}'
+                                  store.ipse.pocChillTime != null&&store.ipse.newHeads?.number!=null
+                                      ? '${I18n.of(context).gov['remain']}:  ${Fmt.blockToTime(store.ipse.pocChillTime[isChillTime ? 1 : 0] - store.ipse.newHeads.number, blockDuration)}'
                                       : '',
                                   style: TextStyle(
                                     color: Colors.white,

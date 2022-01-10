@@ -10,8 +10,9 @@ class Adapt {
     static double _pixelRatio = mediaQuery.devicePixelRatio;
     static var _ratio;
     static init(int number){
+        double width = _width > _height ? _height : _width;
         int uiwidth = number is int ? number : 750;
-        _ratio = _width / uiwidth;
+        _ratio = width / uiwidth;
     }
     static double px(number){
         if(!(_ratio is double || _ratio is int)){Adapt.init(750);}

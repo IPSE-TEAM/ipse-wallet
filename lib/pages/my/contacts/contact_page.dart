@@ -30,7 +30,7 @@ class _Contact extends State<ContactPage> {
 
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController _addressCtrl = new TextEditingController(text: "5HmMGW7MB8RxUEgpTgGwHdbNoJXdaHknwVJWiDtjDnfksYko");
+  final TextEditingController _addressCtrl = new TextEditingController();
   final TextEditingController _nameCtrl = new TextEditingController();
   final TextEditingController _memoCtrl = new TextEditingController();
 

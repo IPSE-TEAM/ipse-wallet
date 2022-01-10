@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ipsewallet/config/config.dart';
 import 'package:ipsewallet/pages/my/mortgage/mortgage.dart';
 import 'package:ipsewallet/pages/my/tx_confirm_page.dart';
 import 'package:ipsewallet/service/substrate_api/api.dart';
@@ -12,6 +13,7 @@ import 'package:ipsewallet/utils/adapt.dart';
 import 'package:ipsewallet/utils/i18n/index.dart';
 import 'package:ipsewallet/widgets/my_appbar.dart';
 import 'package:ipsewallet/widgets/rounded_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PocRegister extends StatefulWidget {
   PocRegister(this.appStore);
@@ -42,7 +44,7 @@ class _PocRegisterState extends State<PocRegister> {
       int proportion = int.tryParse(_proportionCtrl.text);
       String address = store.account.currentAddress;
       var args = {
-        "title": I18n.of(context).ipse['miner_register'],
+        "title": 'PoC '+I18n.of(context).ipse['miner_register'],
         "txInfo": {
           "module": 'pocStaking',
           "call": 'register',
@@ -76,7 +78,7 @@ class _PocRegisterState extends State<PocRegister> {
   Widget build(BuildContext context) {
     Map dic = I18n.of(context).ipse;
     return Scaffold(
-      appBar: myAppBar(context, I18n.of(context).ipse['miner_register']),
+      appBar: myAppBar(context,'PoC '+ I18n.of(context).ipse['miner_register']),
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -197,6 +199,18 @@ class _PocRegisterState extends State<PocRegister> {
                       keyboardType: TextInputType.phone,
                       textInputAction: TextInputAction.done,
                       controller: _proportionCtrl,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    TextButton(
+                      onPressed: () async {
+                        String url = Config.tutorialUrl;
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        }
+                      },
+                      child: Text(I18n.of(context).ipse["View_tutorial"]),
                     ),
                   ],
                 ),

@@ -17,6 +17,7 @@ import 'package:ipsewallet/widgets/loading_widget.dart';
 import 'package:ipsewallet/widgets/my_appbar.dart';
 import 'package:ipsewallet/widgets/no_data.dart';
 import 'package:ipsewallet/widgets/poc_mortage_lock_card.dart';
+import 'package:ipsewallet/widgets/tap_tooltip.dart';
 
 class Mortgage extends StatefulWidget {
   Mortgage(this.appStore);
@@ -100,6 +101,8 @@ class _MortgageState extends State<Mortgage> {
       if (store.ipse.pocMinersOf != null && store.ipse.pocMinersOf.isNotEmpty) {
         listWidget = _getListWidget();
       }
+     
+
       return Scaffold(
         appBar: myAppBar(
           context,
@@ -158,12 +161,10 @@ class _MortgageState extends State<Mortgage> {
                                   ),
                                 ),
                           GestureDetector(
-                            onTap:
-                               
-                                store.ipse.pocIsChillTime == null ||
-                                        store.ipse.pocIsChillTime
-                                    ? _showNotOpTips:
-                                () => Navigator.of(context)
+                            onTap: store.ipse.pocIsChillTime == null ||
+                                    store.ipse.pocIsChillTime
+                                ? _showNotOpTips
+                                : () => Navigator.of(context)
                                     .pushNamed(UserMortgage.route),
                             child: Row(
                               children: [
@@ -182,6 +183,49 @@ class _MortgageState extends State<Mortgage> {
                         ],
                       ),
                     ),
+                    store.ipse.pocChillTime != null &&
+                            store.ipse.newHeads?.number != null
+                        ? Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                TapTooltip(
+                                  message: dic['cooling_off_period_tip'],
+                                  child: Icon(
+                                    Icons.info,
+                                    color: Colors.white,
+                                    size: 16,
+                                  ),
+                                ),
+                                SizedBox(width: 6),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 2.0),
+                                  child: Text(
+                                    store.ipse.pocIsChillTime
+                                        ? dic['cooling_off_period']
+                                        : dic['not_cooling_off_period'],
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: Adapt.px(26),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 16),
+                                Text(
+                                  store.ipse.pocChillTime != null &&
+                                          store.ipse.newHeads?.number != null
+                                      ? '${I18n.of(context).gov['remain']}:  ${Fmt.blockToTime(store.ipse.pocChillTime[store.ipse.pocIsChillTime ? 1 : 0] - store.ipse.newHeads.number, blockDuration)}'
+                                      : '',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: Adapt.px(20),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        : Container(),
                   ],
                 ),
               ),

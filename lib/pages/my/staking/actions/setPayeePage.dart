@@ -28,8 +28,7 @@ class _SetPayeePageState extends State<SetPayeePage> {
 
   void _onSubmit() {
     var dic = I18n.of(context).staking;
-    var rewardToOptions =
-        _rewardToOptions.map((i) => dic['reward.$i']).toList();
+
     int currentPayee =
         _rewardToOptions.indexOf(store.staking.ownStashInfo.destination);
 
@@ -58,7 +57,7 @@ class _SetPayeePageState extends State<SetPayeePage> {
         "call": 'setPayee',
       },
       "detail": jsonEncode({
-        "reward_destination": rewardToOptions[_rewardTo],
+        "reward_destination": _rewardTo,
       }),
       "params": [
         // "to"

@@ -6,6 +6,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:ipsewallet/config/config.dart';
 import 'package:ipsewallet/model/poc_register_status_model.dart';
 import 'package:ipsewallet/model/poc_staking_info_model.dart';
+import 'package:ipsewallet/pages/my/mortgage/poc_miner_mining_history.dart';
 import 'package:ipsewallet/pages/my/mortgage/poc_my_mining_history.dart';
 import 'package:ipsewallet/pages/my/mortgage/user_update_mortgage.dart';
 import 'package:ipsewallet/pages/my/my.dart';
@@ -59,7 +60,6 @@ class _MortgageDetailState extends State<MortgageDetail> {
     }
   }
 
-  
   Future<void> _exit() async {
     var args = {
       "title": I18n.of(context).ipse['exit_mortgage'],
@@ -147,7 +147,19 @@ class _MortgageDetailState extends State<MortgageDetail> {
           }
 
           return GredientBg(
-            title: dic['miner_mortgager_detail'],
+            title: dic['miner_mortgage_detail'],
+            action: IconButton(
+              icon: Icon(Icons.list_alt_rounded),
+              iconSize: 18,
+              color: Colors.white,
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      PocMinerMiningHistory(store, widget.address),
+                ),
+              ),
+            ),
             child: RefreshIndicator(
               onRefresh: getData,
               key: globalPocMinerMortgageDetailRefreshKey,
@@ -420,7 +432,8 @@ class _MortgageDetailState extends State<MortgageDetail> {
                                                         ),
                                                         SizedBox(width: 3),
                                                         Text(
-                                                          dic['mining_history'],
+                                                          dic['my'] +
+                                                              dic['mining_history'],
                                                           style: style,
                                                         ),
                                                       ],
@@ -448,8 +461,6 @@ class _MortgageDetailState extends State<MortgageDetail> {
                                       ),
                                     )
                                   : Container(),
-
-                            
                               Card(
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 15.0),

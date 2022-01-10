@@ -115,7 +115,7 @@ const Map<String, String> enIpse = {
   'reward_desc':
       '24 hours after the order is confirmed, the reward will be issued and the record can be viewed (stored for 3 days, then it will be distributed in 3 days).',
   'miner_profit_ratio': 'Miner profit ratio',
-  'miner_mortgager_detail': 'Miner mortgager detail',
+  'miner_mortgage_detail': 'Miner mortgage detail',
   'mortgager_list': 'Mortgager list',
   'reserved': 'Reserved',
   'reward_address': 'Reward address',
@@ -126,7 +126,8 @@ const Map<String, String> enIpse = {
   'start_mining': 'Start mining',
   'exit_mortgage': 'Exit mortgage',
   'cooling_off_period': 'Cooling-off period',
-  'not_cooling_off_period': 'Not Cooling-off period',
+  'cooling_off_period_tip': 'Cooling period (only miners can modify the plot disk ID, plot disk space, commission), non-cooling period (the mortgager can mortgage, the miner can mortgage themselves)',
+  'not_cooling_off_period': 'Non-cooling period',
   'cooling_cannot_op':
       'Operation cannot be carried out during the cooling period',
   'cooling_can_op':
@@ -233,7 +234,7 @@ const Map<String, String> enIpse = {
   'pocStaking.PlotSizeIsZero': 'Plot disk space is 0 (not allowed)',
 
   'pocStaking.ChillTime':
-      'During the freezing period (only miners can modify information, users cannot perform mortgage or de-mortgage operations)',
+      'During the freezing period (only miners can modify information, users cannot perform mortgage)',
 
   'pocStaking.NotChillTime': 'Not in freezing period',
 
@@ -341,7 +342,7 @@ const Map<String, String> zhIpse = {
   'ranking_tip': '进行抵押排名才能被其他人看到',
   'mortgage_amount': '抵押金额',
   'mortgage_ranking_amount': '矿工排名锁定',
-  'commission': '佣金',
+  'commission': '矿工收取佣金',
   'plot_disk_space': 'P盘空间',
   'unit_G': '（单位为G)',
   'plot_disk_id': 'P盘id',
@@ -364,7 +365,7 @@ const Map<String, String> zhIpse = {
   'expected_profits': '预期收益',
   'reward_desc': '订单确认24小时后，发放奖励，可看到记录（存储3天，则分成3天发放）。',
   'miner_profit_ratio': '矿工分润比',
-  'miner_mortgager_detail': '矿工质押详情',
+  'miner_mortgage_detail': '矿工质押详情',
   'mortgager_list': '质押者列表',
   'reserved': '保留',
   'reward_address': '收益地址',
@@ -375,6 +376,7 @@ const Map<String, String> zhIpse = {
   'start_mining': '启动挖矿',
   'exit_mortgage': '退出质押',
   'cooling_off_period': '冷却期',
+  'cooling_off_period_tip': '冷却期(只有矿工可以修改P盘ID、P盘空间、佣金)，非冷却期(质押者可以进行质押，矿工可质押自己)',
   'not_cooling_off_period': '非冷却期',
   'cooling_cannot_op': '冷却期无法进行操作',
   'cooling_can_op': '冷却期才能进行操作',
@@ -473,7 +475,7 @@ const Map<String, String> zhIpse = {
 
   'pocStaking.PlotSizeIsZero': 'p盘空间为0(不允许)',
 
-  'pocStaking.ChillTime': '在冷却期（只能矿工修改信息，用户不能进行抵押或是解抵押操作）',
+  'pocStaking.ChillTime': '在冷却期（只能矿工修改信息，用户不能进行抵押）',
 
   'pocStaking.NotChillTime': '不在冷却期',
 

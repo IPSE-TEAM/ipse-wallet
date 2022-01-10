@@ -32,14 +32,18 @@ class _PayoutPageState extends State<PayoutPage> {
 
   Future<void> _queryLatestRewards() async {
     final options = await webApi.staking.fetchAccountRewardsEraOptions();
-    setState(() {
-      _eraOptions = options;
-    });
+    if (mounted) {
+      setState(() {
+        _eraOptions = options;
+      });
+    }
     await webApi.staking.fetchAccountRewards(
         store.account.currentAccount.pubKey, options[0]['value']);
-    setState(() {
-      _loading = false;
-    });
+    if (mounted) {
+      setState(() {
+        _loading = false;
+      });
+    }
   }
 
   Future<void> _queryRewards(int selectedEra) async {
@@ -184,7 +188,7 @@ class _PayoutPageState extends State<PayoutPage> {
     var dic = I18n.of(context).staking;
     final int decimals = store.settings.networkState.tokenDecimals;
     return Scaffold(
-      appBar:  myAppBar(context, dic['action.payout']),
+      appBar: myAppBar(context, dic['action.payout']),
       body: Observer(builder: (BuildContext context) {
         return SafeArea(
           child: Column(

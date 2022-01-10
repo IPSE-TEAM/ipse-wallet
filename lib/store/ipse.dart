@@ -178,7 +178,7 @@ abstract class _IpseStoreBase with Store {
       searhResultList = [];
       searchResults = null;
     } else {
-      searhResultList = searchResults.toList();
+      searhResultList = searchResults?.toList()??[];
     }
     ResultData res = await RequestService.searchData(params);
     if (res.code != 111 && res.data['Status'] == 200) {

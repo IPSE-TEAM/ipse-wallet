@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ipsewallet/store/account/account.dart';
 import 'package:ipsewallet/utils/i18n/index.dart';
+import 'package:ipsewallet/utils/my_utils.dart';
 import 'package:ipsewallet/widgets/account_advance_option.dart';
 import 'package:ipsewallet/widgets/rounded_button.dart';
 
@@ -131,7 +132,14 @@ class _ImportAccountFormState extends State<ImportAccountForm> {
   void _onKeyChange(String v) {
     if (_keySelection == 2) {
       // auto set account name
-      var json = jsonDecode(v.trim());
+      var json = {};
+      try {
+          json = jsonDecode(v.trim());
+      } catch (e) {
+        print(e);
+        showErrorMsg("Invalid json");
+      }
+     
       if (json['meta']!=null && json['meta']['name'] != null) {
         setState(() {
           _nameCtrl.value = TextEditingValue(text: json['meta']['name']);
