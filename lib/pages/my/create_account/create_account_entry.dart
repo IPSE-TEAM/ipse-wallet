@@ -74,16 +74,18 @@ class CreateAccountEntryPage extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       I18n.of(context).ipse['appDesc1'],
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Config.color999, fontSize: Adapt.px(28)),
+                          color: Config.color999, fontSize: Adapt.px(27)),
                     ),
                     SizedBox(
                       height: 8,
                     ),
                     Text(
                       I18n.of(context).ipse['appDesc2'],
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Config.color999, fontSize: Adapt.px(28)),
+                          color: Config.color999, fontSize: Adapt.px(27)),
                     ),
                   ],
                 ),

@@ -73,7 +73,6 @@ class GredientBg extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.fromLTRB(15, 60, 15, 0),
                     child: child
-                    // SingleChildScrollView(child: child),
                   ),
                 ),
               ],

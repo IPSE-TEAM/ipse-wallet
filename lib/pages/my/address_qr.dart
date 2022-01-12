@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ipsewallet/utils/format.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:ipsewallet/config/config.dart';
 import 'package:ipsewallet/store/account/account.dart';
@@ -26,13 +27,12 @@ class _AddressQRState extends State<AddressQR> {
         title: I18n.of(context).my['myAccountAddress'],
         height: Adapt.px(609),
         child: Container(
-          height: Adapt.px(900),
+          margin: EdgeInsets.only(bottom: Adapt.px(40)),
           padding: EdgeInsets.only(top: Adapt.px(40), bottom: Adapt.px(100)),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             color: Colors.white,
             boxShadow: [
-        
               BoxShadow(
                 color: Color.fromRGBO(35, 174, 132, 0.12),
                 offset: Offset(0, Adapt.px(4)),
@@ -71,6 +71,7 @@ class _AddressQRState extends State<AddressQR> {
                 child: Text(_address,
                     style: TextStyle(
                       color: Config.color666,
+                      fontSize: Adapt.px(20),
                     ),
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis),
