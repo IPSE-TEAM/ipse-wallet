@@ -45,7 +45,7 @@ app.*.map.json
 **/node_modules/
 
 *.sh
-*.json
+ipse-version.json
 key.properties
 local.properties
 1build.sh
